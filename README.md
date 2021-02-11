@@ -1,2 +1,2 @@
 # aprendendo-javascript
-começando com javascript basico
+Começando com javascript basico
