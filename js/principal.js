@@ -54,5 +54,64 @@ for(var i=0; i<pacientes.length;i++){
 }
 
 
+//addEventListener -> escuta o evento causado pelo usuário, no caso desse
+//exemplo, ele vai escutar o evento de click.
+// titulo.addEventListener("click", function mostraMensagem(){
+//     console.log('Olá, eu fui clicado!');
+// });
 
+//preventDefault() - previne o corpotamento do botão.. 
+//através do form, podemos acessar o name dos inputs também.. e pra pegarmos
+//os valores dos inputs digitados, utilizamos value.
+//createElement('nomeDaTag'), serve para criar elemento HTML dentro do JS.
+//appendChild(nomeDaTagFilha) - serve para jogar a tag filha dentro do pai.
+
+var botaoAdicionar = document.querySelector('#adicionar-paciente');
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault();
+
+    var form = document.querySelector('#form-adiciona');
+
+    //obtendo os valores dos campos
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    //criando a tag tr dentro do javascript
+    var pacienteTr = document.createElement('tr');
+    
+    var nomeTd = document.createElement('td');
+    var pesoTd = document.createElement('td');
+    var alturaTd = document.createElement('td');
+    var gorduraTd = document.createElement('td');
+
+    //obtendo os valores
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    console.log(pacienteTr.appendChild(nomeTd));
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    var tabela = document.querySelector('#tabela-pacientes');
+    tabela.appendChild(pacienteTr);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+});
 
